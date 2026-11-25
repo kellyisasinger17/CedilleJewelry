@@ -1,9 +1,10 @@
-:root { --espresso:#59280A; --ivory:#FBF9F7; --gold:#A58754; --espresso-rgb:89,40,10; --ivory-rgb:251,249,247; --heading:"Cinzel",Georgia,serif; --body:"Cormorant Garamond",Georgia,serif; --secondary:"Libre Baskerville",Georgia,serif; }
+:root { --espresso:#59280A; --ivory:#FBF9F7; --gold:#A58754; --espresso-rgb:89,40,10; --ivory-rgb:251,249,247; --display-heading:"Viaoda Libre",Georgia,serif; --heading:"Cinzel",Georgia,serif; --body:"Cormorant Garamond",Georgia,serif; --secondary:"Libre Baskerville",Georgia,serif; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--espresso); background:var(--ivory) url("../assets/Cedille and Co Web Banner Art Nouveau (1).png") center top/cover fixed no-repeat; font:1.125rem/1.65 var(--body); overflow-x:hidden; }
 img { display:block; max-width:100%; }
 a { color:inherit; }
+h1,h2 { font-family:var(--display-heading); }
 .skip-link { position:fixed; top:.5rem; left:.5rem; z-index:1100; padding:.65rem 1rem; color:var(--ivory); background:var(--espresso); transform:translateY(-150%); }
 .skip-link:focus { transform:translateY(0); }
 :focus-visible { outline:3px solid var(--gold); outline-offset:4px; }
@@ -23,7 +24,7 @@ a { color:inherit; }
 .hero-emblem { position:relative; width:clamp(8.5rem,17.5vw,17.5rem); aspect-ratio:4/5; overflow:hidden; }
 .hero-figure { width:100%; height:100%; object-fit:contain; pointer-events:none; }
 .eyebrow { margin:0 0 1rem; color:var(--gold); font-size:.8rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; }
-.hero h1 { margin:.5rem 0 0; color:rgba(var(--espresso-rgb),.8); font:400 clamp(3rem,6vw,5.4rem)/.98 var(--body); letter-spacing:.01em; }
+.hero h1 { margin:.5rem 0 0; color:rgba(var(--espresso-rgb),.8); font:400 clamp(3rem,6vw,5.4rem)/.98 var(--display-heading); letter-spacing:.01em; }
 .ornament { display:flex; align-items:center; gap:.8rem; width:min(13rem,55%); margin:1.5rem auto; color:var(--gold); }
 .ornament::before,.ornament::after { content:""; height:1px; flex:1; background:var(--gold); }
 .ornament span { font-size:.6rem; }
@@ -35,7 +36,7 @@ a { color:inherit; }
 .collections-section { background:transparent; }
 .instagram-section { background:transparent; }
 .section-heading { max-width:44rem; margin:0 auto clamp(2.8rem,5vw,4.5rem); padding:clamp(1.25rem,3vw,2rem); background:rgba(var(--ivory-rgb),.72); border:1px solid rgba(251,249,247,.5); border-radius:8px; box-shadow:0 12px 36px rgba(var(--espresso-rgb),.06); backdrop-filter:blur(2px); }
-.section-heading h2,.story-panel h2 { margin:0; font:500 clamp(2rem,4vw,3.4rem)/1.2 var(--heading); letter-spacing:.06em; text-transform:uppercase; }
+.section-heading h2,.story-panel h2 { margin:0; font:500 clamp(2rem,4vw,3.4rem)/1.2 var(--display-heading); letter-spacing:.06em; text-transform:uppercase; }
 .section-heading>p:last-child { margin:1rem auto 0; font-size:1.2rem; }
 .collections-section .section-heading { width:fit-content; max-width:calc(100% - 2rem); padding-inline:clamp(1rem,3vw,2rem); }
 .collections-section #collections-title { font-size:clamp(1.3rem,2.6vw,2.35rem); letter-spacing:.04em; white-space:nowrap; }
@@ -45,6 +46,37 @@ a { color:inherit; }
 .collection-grid { width:80%; margin-inline:auto; }
 .collection-card { position:relative; height:33.6rem; overflow:hidden; background:var(--espresso); border-radius:8px; box-shadow:0 18px 40px rgba(var(--espresso-rgb),.14); }
 .collection-card::after { content:""; position:absolute; inset:12px; z-index:2; border:1px solid rgba(251,249,247,.6); border-radius:8px; pointer-events:none; transition:.4s ease; }
+a.collection-card { display:block; text-decoration:none; }
+.contact-main { padding:clamp(7rem,12vw,10rem) 1rem 5rem; }
+.contact-panel {
+  width:min(36rem,100%);
+  margin-inline:auto;
+  padding:clamp(1.25rem,5vw,3rem);
+  border:1px solid rgba(165,135,84,.35);
+  border-radius:8px;
+  background:rgba(var(--ivory-rgb),.96);
+  box-shadow:0 12px 36px rgba(var(--espresso-rgb),.1);
+}
+.contact-panel h1 { margin:0 0 1.5rem; text-align:center; }
+.thanks-panel { width:min(28rem,100%); text-align:center; }
+.thanks-panel p { margin:0; }
+.contact-form,.contact-field { display:grid; }
+.contact-form { gap:1rem; }
+.contact-field { gap:.25rem; }
+.contact-field label { font-weight:600; }
+.contact-form .form-control,.contact-form .form-select {
+  min-height:2.75rem;
+  border-color:var(--gold);
+  background-color:var(--ivory);
+  color:var(--espresso);
+}
+.contact-submit {
+  padding:.65rem 1rem;
+  border:1px solid var(--espresso);
+  border-radius:8px;
+  background:var(--espresso);
+  color:var(--ivory);
+}
 .collection-card img { width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
 .collection-card:first-child img { object-position:center 38%; }
 .collection-overlay { position:absolute; inset:auto 0 0; z-index:1; padding:7rem clamp(1.5rem,4vw,3rem) clamp(2rem,4vw,3rem); color:var(--ivory); text-align:center; background:linear-gradient(transparent,rgba(var(--espresso-rgb),.88)); }
@@ -67,7 +99,7 @@ a { color:inherit; }
 .site-footer { padding:clamp(4.5rem,8vw,7rem) 0 1.5rem; color:var(--espresso); text-align:center; background:var(--ivory); border-top:4px double var(--gold); }
 .footer-brand img { width:9.5rem; max-height:11rem; margin:0 auto 1.2rem; object-fit:contain; object-position:center; }
 .footer-brand p { font:italic 1.05rem/1.5 var(--secondary); }
-.site-footer h2 { margin:.5rem 0 1.25rem; color:var(--gold); font:500 .85rem/1.2 var(--heading); letter-spacing:.14em; text-transform:uppercase; }
+.site-footer h2 { margin:.5rem 0 1.25rem; color:var(--gold); font:500 .85rem/1.2 var(--display-heading); letter-spacing:.14em; text-transform:uppercase; }
 .site-footer ul { margin:0; padding:0; list-style:none; }
 .site-footer li { margin-bottom:.55rem; }
 .site-footer a { color:var(--espresso); text-decoration-color:transparent; text-underline-offset:.25rem; transition:.25s ease; }
@@ -84,7 +116,7 @@ a { color:inherit; }
 .legal-page { min-height:100svh; background-color:var(--ivory); background-image:url("../assets/Cedille and Co Web Banner Art Nouveau (1).png"); background-position:center top; background-size:cover; background-attachment:fixed; background-repeat:no-repeat; }
 .legal-main { display:grid; position:relative; z-index:1; gap:2rem; padding-top:clamp(7.5rem,11vw,10rem); padding-bottom:clamp(4rem,9vw,8rem); }
 .legal-container { width:min(56rem,100%); min-height:12rem; margin-inline:auto; padding:clamp(1.5rem,4vw,3rem); background:rgba(var(--ivory-rgb),.82); border:1px solid rgba(251,249,247,.58); border-radius:8px; box-shadow:0 16px 48px rgba(var(--espresso-rgb),.09); backdrop-filter:blur(3px); }
-.legal-container h2 { margin:0; color:var(--espresso); font:500 clamp(1.3rem,2.6vw,2.35rem)/1.2 var(--heading); letter-spacing:.04em; text-align:center; text-transform:uppercase; }
+.legal-container h2 { margin:0; color:var(--espresso); font:500 clamp(1.3rem,2.6vw,2.35rem)/1.2 var(--display-heading); letter-spacing:.04em; text-align:center; text-transform:uppercase; }
 .legal-body { margin-top:1.5rem; }
 .legal-disclosure { min-height:0; padding:0; }
 .legal-disclosure>summary { display:flex; position:relative; align-items:center; justify-content:center; min-height:5.5rem; padding:1.5rem 4rem; cursor:pointer; list-style:none; color:var(--espresso); font:500 clamp(1.3rem,2.6vw,2.35rem)/1.2 var(--heading); letter-spacing:.04em; text-align:center; text-transform:uppercase; }
@@ -102,7 +134,7 @@ a { color:inherit; }
 .legal-body a { color:var(--espresso); text-decoration-color:var(--gold); text-underline-offset:.18em; }
 .legal-body a:hover,.legal-body a:focus { color:var(--gold); }
 .faq-container { text-align:center; }
-.faq-section-title { margin:0; color:var(--espresso); font:500 clamp(1.3rem,2.6vw,2.35rem)/1.2 var(--heading); letter-spacing:.04em; text-align:center; text-transform:uppercase; }
+.faq-section-title { margin:0; color:var(--espresso); font:500 clamp(1.3rem,2.6vw,2.35rem)/1.2 var(--display-heading); letter-spacing:.04em; text-align:center; text-transform:uppercase; }
 .faq-list:empty { display:none; }
 .faq-list { display:grid; gap:2.25rem; text-align:left; }
 .faq-intro { margin:0!important; font:italic 1.15rem/1.5 var(--secondary); text-align:center; }
@@ -132,8 +164,8 @@ a { color:inherit; }
 .about-main { padding:clamp(8rem,10vw,10rem) clamp(1.5rem,5vw,7.5rem) clamp(5rem,9vw,8rem); }
 .collections-main { min-height:65vh; }
 .about-heading { max-width:52rem; margin:0 auto clamp(3rem,6vw,5rem); text-align:center; }
-.about-heading h1 { margin:0; color:var(--espresso); font:500 clamp(2rem,4.5vw,3.5rem)/1.1 var(--heading); letter-spacing:.06em; text-transform:uppercase; }
-.about-heading h2 { margin:1rem 0 0; color:var(--gold); font:italic 400 clamp(1.25rem,2.5vw,1.8rem)/1.4 var(--secondary); }
+.about-heading h1 { margin:0; color:var(--espresso); font:500 clamp(2rem,4.5vw,3.5rem)/1.1 var(--display-heading); letter-spacing:.06em; text-transform:uppercase; }
+.about-heading h2 { margin:1rem 0 0; color:var(--gold); font:italic 400 clamp(1.25rem,2.5vw,1.8rem)/1.4 var(--display-heading); }
 .about-layout { width:min(72rem,100%); margin-inline:auto; }
 .about-portrait { flex:0 0 150px; width:150px; height:150px; max-width:150px; margin:0; overflow:hidden; border-radius:8px; }
 .about-portrait img { width:100%; height:100%; object-fit:cover; object-position:center top; }
@@ -147,10 +179,116 @@ a { color:inherit; }
 .values-section { width:min(72rem,100%); margin:0 auto; }
 .story-section { margin-top:clamp(5rem,10vw,9rem); padding-top:clamp(3rem,6vw,5rem); border-top:1px solid rgba(165,135,84,.35); }
 .values-heading { margin:0 auto clamp(2.5rem,5vw,4rem); text-align:center; }
-.values-heading h2 { margin:0; color:var(--espresso); font:500 clamp(1.5rem,3vw,2.35rem)/1.2 var(--heading); letter-spacing:.05em; text-transform:uppercase; }
+.values-heading h2 { margin:0; color:var(--espresso); font:500 clamp(1.5rem,3vw,2.35rem)/1.2 var(--display-heading); letter-spacing:.05em; text-transform:uppercase; }
 .values-heading .ornament { margin-top:.8rem; margin-bottom:0; }
 .values-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
 .value-card { padding:clamp(1.5rem,3vw,2.25rem); background:rgba(var(--ivory-rgb),.82); border:1px solid rgba(165,135,84,.3); border-radius:8px; box-shadow:0 12px 32px rgba(var(--espresso-rgb),.05); }
 .value-card h3 { margin:0 0 .8rem; color:var(--gold); font:500 clamp(1.05rem,1.8vw,1.3rem)/1.4 var(--heading); }
 .value-card p { margin:0; color:var(--espresso); font-size:1.1rem; line-height:1.6; }
 @media (max-width:767.98px) { .about-main{padding:7rem 1rem 4.5rem}.about-layout{width:100%}.about-portrait{width:150px;height:150px;max-width:150px;margin:0}.about-copy{width:100%;margin-inline:auto;font-size:16px;line-height:1.65}.about-copy p{margin-bottom:2rem}.about-copy .aside{white-space:normal}.story-signoff{gap:1rem}.story-signoff .about-signature{margin:0!important}.values-section{margin-top:0;padding-top:0}.story-section{margin-top:4.5rem;padding-top:3rem}.values-grid{grid-template-columns:1fr}.value-card p{font-size:1.05rem} }
+.product-page { background:var(--ivory); }
+.shop-page { background:var(--ivory); }
+.shop-main {
+  min-height:75vh;
+  padding:7rem clamp(1rem,2.5vw,2.25rem) 6rem;
+  color:#795b30;
+}
+.shop-breadcrumb {
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:clamp(3rem,8vw,7rem);
+}
+.shop-count { margin-bottom:1.25rem; }
+.shop-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));
+  max-width:66rem;
+  gap:2rem .75rem;
+}
+.shop-card a { display:block; text-decoration:none; }
+.shop-card img {
+  width:100%;
+  height:auto;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:8px;
+}
+.shop-card h2 { margin:.9rem 0 .25rem; font-size:1.25rem; }
+.shop-card p { margin:0; }
+.shop-card a:hover h2,.shop-card a:focus-visible h2 { text-decoration:underline; }
+.product-main {
+  display:grid;
+  grid-template-columns:minmax(0,600px) minmax(18rem,1fr);
+  align-items:start;
+  gap:clamp(2rem,6vw,5rem);
+  width:min(78rem,calc(100% - 2rem));
+  margin-inline:auto;
+  padding-block:clamp(7rem,12vw,10rem) 5rem;
+}
+.product-gallery {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.5rem;
+  justify-content:center;
+  width:min(100%,600px);
+}
+.product-gallery-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.25rem 1rem;
+  width:100%;
+  margin:0 0 .25rem;
+  color:var(--espresso);
+}
+.product-gallery button {
+  min-width:2.75rem;
+  min-height:2.75rem;
+  border:1px solid var(--gold);
+  background:var(--ivory);
+  color:var(--espresso);
+  cursor:pointer;
+}
+.product-photos {
+  display:grid;
+  grid-template: minmax(0,1fr) / minmax(0,1fr);
+  place-items:center;
+  width:100%;
+  aspect-ratio:1;
+}
+.product-photos img { width:auto; height:auto; max-width:100%; max-height:100%; border-radius:8px; }
+.product-photos img[hidden] { display:none; }
+.product-copy h1 {
+  font-size:clamp(2.25rem,5.5vw,4.5rem);
+  line-height:1.08;
+  margin-bottom:1rem;
+}
+.product-price { font-size:1.6rem; }
+.product-preorder {
+  width:100%;
+  margin-bottom:1.75rem;
+  padding:.75rem 1rem;
+  border:0;
+  background:#8b6b39;
+  color:var(--ivory);
+  cursor:not-allowed;
+}
+.product-copy h2 { font-size:1.5rem; }
+.product-policy { border-bottom:1px solid rgba(165,135,84,.4); }
+.product-policy summary {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:.85rem 0;
+  list-style:none;
+  cursor:pointer;
+  font-size:1.3rem;
+}
+.product-policy summary::-webkit-details-marker { display:none; }
+.product-policy summary::after { content:"+" / ""; }
+.product-policy[open] summary::after { content:"−" / ""; }
+@media (max-width:767.98px) {
+  .product-main { grid-template-columns:minmax(0,1fr); }
+}
